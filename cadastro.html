@@ -41,7 +41,7 @@
                     </div>
                     
                     <div class="input-container">
-                        <input name="senha" id="senha" class="input" type="password" placeholder="Senha" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?!.*[ !@#$%^&*_=+-]).{6,12}$" title="A senha deve conter entre 6 a 12 caracteres, deve conter pelo menos uma letra maiúscula, um número e não deve conter símbolos." data-tipo="senha" required>
+                        <input name="senha" id="senha" class="input" type="password" placeholder="Senha" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])[A-Za-z0-9]{6,12}$" title="A senha deve conter entre 6 a 12 caracteres, deve conter pelo menos uma letra maiúscula, um número e não deve conter símbolos." data-tipo="senha" required>
                         <label class="input-label" for="senha">Senha</label>
                         <span class="input-mensagem-erro">Este campo não está válido</span>
                     </div>
@@ -56,6 +56,11 @@
                     <div class="input-container">
                         <input name="cpf" id="cpf" class="input" type="text" placeholder="CPF" data-tipo="cpf" required>
                         <label class="input-label" for="cpf">CPF</label>
+                        <span class="input-mensagem-erro">Este campo não está válido</span>
+                    </div>
+                    <div class="input-container">
+                        <input name="numero" id="numero" class="input" type="text" placeholder="Número" data-tipo="numero" required>
+                        <label class="input-label" for="numero">Número</label>
                         <span class="input-mensagem-erro">Este campo não está válido</span>
                     </div>
                 </fieldset>

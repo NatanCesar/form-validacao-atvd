@@ -54,13 +54,18 @@ const mensagensDeErro = {
     },
     estado: {
         valueMissing: 'O campo de estado não pode estar vazio.'
+    },
+    numero: {
+        valueMissing: 'O campo de número não pode estar vazio.',
+        customError: 'O número digitado não é válido.'
     }
 }
 
 const validadores = {
     dataNascimento:input => validaDataNascimento(input),
     cpf:input => validaCPF(input),
-    cep:input => recuperarCEP(input)
+    cep:input => recuperarCEP(input),
+    numero:input => validaNumero(input)
 }
 
 function mostraMensagemDeErro(tipoDeInput, input) {
@@ -73,6 +78,21 @@ function mostraMensagemDeErro(tipoDeInput, input) {
     
     return mensagem
 }
+
+function validaNumero(input) {
+    let mensagem = ''
+
+    const valor = input.value.trim()
+
+    const regexTelefone = /^(\(?\d{2}\)?)(\d{4,5})-?(\d{4})$/
+
+    if (valor !== '' && !regexTelefone.test(valor)) {
+        mensagem = 'Digite um telefone válido com DDD.'
+    }
+
+    input.setCustomValidity(mensagem)
+}
+
 
 function validaDataNascimento(input) {
     const dataRecebida = new Date(input.value)
