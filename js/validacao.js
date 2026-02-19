@@ -58,6 +58,10 @@ const mensagensDeErro = {
     numero: {
         valueMissing: 'O campo de número não pode estar vazio.',
         customError: 'O número digitado não é válido.'
+    },
+    instagram: {
+        valueMissing: 'O campo de Instagram não pode estar vazio.',
+        patternMismatch: 'O Instagram digitado não é válido.'
     }
 }
 
